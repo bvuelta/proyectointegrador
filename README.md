@@ -1,6 +1,5 @@
 # Proyecto de Monitorización y Auditoría del Sistema
 
-## 📌 Descripción
 
 Este proyecto consiste en el desarrollo de una herramienta en **Python** que realiza tareas de **monitorización y auditoría de un sistema Linux**. El programa analiza procesos en ejecución, el estado de la memoria y los permisos del sistema de archivos, obteniendo la información directamente del sistema operativo mediante el uso del pseudo–sistema de archivos `/proc`.
 
@@ -132,16 +131,3 @@ Este proyecto permite comprender de forma práctica el funcionamiento interno de
 
 ---
 
-## 👨‍💻 Autores
-
-Trabajo realizado en grupo para la asignatura **Fundamentos de Computadores – Sistemas Operativos**.
-
-Curso académico 2025–2026.
-
----
-
-## 📝 Notas
-
-* El proyecto está diseñado para fines educativos.
-* Se recomienda ejecutar el programa con permisos de usuario normal.
-* Algunas rutas pueden generar advertencias de permisos, lo cual es un comportamiento esperado.
