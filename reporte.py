@@ -14,7 +14,7 @@ def generar_markdown(procs, mem, audit, output_path='informe.md'):
         f.write(f"- Procesos detectados: {len(procs)}\n\n")
         f.write("### Top memoria (10)\n")
         for p in sorted(procs, key=lambda x: x.get('memory_mb') or 0, reverse=True)[:10]:
-            f.write(f"- PID {p['pid']} {p['name']} {p.get('memory_mb'):.2f} MB\n")
+            f.write(f"- PID {p['pid']} {p['name']}\n")
         # Auditoría
         f.write("\n## Auditoría de permisos\n")
         for tipo in ['world_writable','permiso_777','suid','sgid','recientes']:
