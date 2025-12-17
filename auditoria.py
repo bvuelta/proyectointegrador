@@ -1,4 +1,3 @@
-# modules/auditoria.py
 import os
 import stat
 import time
