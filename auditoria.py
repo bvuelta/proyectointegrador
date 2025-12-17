@@ -1,16 +1,20 @@
+#importar librerías os, stat, time y path
 import os
 import stat
 import time
 from pathlib import Path
-
+#función para recorrer una ruta
 def recorrer_ruta(root_path, max_depth=5):
     root_path = Path(root_path).expanduser()
+#.walk para recorrer archivos y directorios dentro de root_path
     for dirpath, dirnames, filenames in os.walk(root_path):
+#unimos directorios y archivos
         for name in filenames + dirnames:
             try:
                 full = Path(dirpath) / name
                 yield full
             except Exception:
+                # si hay error continuamos al siguiente archivo/directorio
                 continue
 
 def permisos_riesgo(paths):
