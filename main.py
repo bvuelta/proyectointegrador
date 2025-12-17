@@ -1,4 +1,4 @@
-# main.py
+#importar desde modulos: procesos, memoria, auditoria y reporte
 from modules import procesos, memoria, auditoria, reporte
 
 def main():
@@ -6,7 +6,7 @@ def main():
     procs = procesos.listar_procesos()
     # Memoria
     mem = memoria.parse_meminfo()
-    # Auditoría: recorrer rutas
+    # Recorrer rutas
     rutas = ['/etc','/var/log','/usr/local/bin', '~']  # mínimo 2 pedidas
     all_paths = []
     for r in rutas:
