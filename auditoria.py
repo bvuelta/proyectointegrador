@@ -1,20 +1,20 @@
-#importar librerías os, stat, time y path
+# Importar librerías os, stat, time y path
 import os
 import stat
 import time
 from pathlib import Path
-#función para recorrer una ruta
+# Función para recorrer una ruta
 def recorrer_ruta(root_path, max_depth=5):
     root_path = Path(root_path).expanduser()
-#.walk para recorrer archivos y directorios dentro de root_path
+# .walk para recorrer archivos y directorios dentro de root_path
     for dirpath, dirnames, filenames in os.walk(root_path):
-#unimos directorios y archivos
+# Unimos directorios y archivos
         for name in filenames + dirnames:
             try:
                 full = Path(dirpath) / name
                 yield full
             except Exception:
-                # si hay error continuamos al siguiente archivo/directorio
+                # Si hay error continuamos al siguiente archivo/directorio
                 continue
 
 def permisos_riesgo(paths):
@@ -30,10 +30,10 @@ def permisos_riesgo(paths):
         except Exception:
             continue
         mode = st.st_mode
-        # world writable?
+        # World writable
         if bool(mode & stat.S_IWOTH):
             world_writable.append(str(p))
-        # 777?
+        # 777
         if stat.S_IMODE(mode) == 0o777:
             permiso_777.append(str(p))
         # SUID
@@ -42,7 +42,7 @@ def permisos_riesgo(paths):
         # SGID
         if bool(mode & stat.S_ISGID):
             sgid.append(str(p))
-        # modificados en las últimas 24h
+        # Modificados en las últimas 24h
         if (ahora - st.st_mtime) < 24*3600:
             recientes.append(str(p))
     return {
