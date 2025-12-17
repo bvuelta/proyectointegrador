@@ -1,4 +1,4 @@
-# modules/reporte.py
+# Importar el modulo datetime
 import datetime
 
 def generar_markdown(procs, mem, audit, output_path='informe.md'):
@@ -25,7 +25,7 @@ def generar_markdown(procs, mem, audit, output_path='informe.md'):
                     f.write(f"- {it}\n")
             else:
                 f.write("- None\n")
-        # Recomendaciones (puedes preparar plantillas)
+        # Recomendaciones 
         f.write("\n## Recomendaciones\n")
         f.write("- Cambiar permisos world-writable: chmod o chown según convenga.\n")
     return output_path
