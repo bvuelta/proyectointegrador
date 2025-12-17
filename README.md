@@ -1,5 +1,6 @@
-# Proyecto de Monitorización y Auditoría del Sistema
+Proyecto Integrador - Monitorización y Auditoría del Sistema Operativo
 
+Asier Landaburu, Beñat Vuelta, Gaizka Hidalgo.
 
 Este proyecto consiste en el desarrollo de una herramienta en **Python** que realiza tareas de **monitorización y auditoría de un sistema Linux**. El programa analiza procesos en ejecución, el estado de la memoria y los permisos del sistema de archivos, obteniendo la información directamente del sistema operativo mediante el uso del pseudo–sistema de archivos `/proc`.
 
