@@ -1,12 +1,12 @@
-# modules/memoria.py
+# Función que analiza la info. de memoria del sistema
 def parse_meminfo():
     mem = {}
     with open('/proc/meminfo','r') as f:
         for line in f:
             key, val = line.split(':',1)
-            val = val.strip().split()[0]  # valor en kB
+            val = val.strip().split()[0]  # Valor en kB
             mem[key] = int(val)
-    # convierte a MB
+    # Convierte a MB
     to_mb = lambda k: mem.get(k,0) / 1024.0
     return {
         'MemTotal_MB': to_mb('MemTotal'),
