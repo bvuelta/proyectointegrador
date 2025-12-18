@@ -2,7 +2,7 @@ Proyecto Integrador - Monitorización y Auditoría del Sistema Operativo
 
 Asier Landaburu, Beñat Vuelta, Gaizka Hidalgo.
 
-Este proyecto consiste en el desarrollo de una herramienta en **Python** que realiza tareas de **monitorización y auditoría de un sistema Linux**. El programa analiza procesos en ejecución, el estado de la memoria y los permisos del sistema de archivos, obteniendo la información directamente del sistema operativo mediante el uso del pseudo–sistema de archivos `/proc`.
+Este proyecto consiste en el desarrollo de una herramienta en **Python** que realiza tareas de **monitorización y auditoría de un sistema Linux**. El programa analiza procesos en ejecución, el estado de la memoria y los permisos del sistema de archivos, obteniendo la información directamente del sistema operativo mediante el uso a de archivos /proc.
 
 El objetivo principal es comprender cómo el sistema operativo gestiona los recursos y la seguridad, así como automatizar la generación de un **informe técnico** con los resultados obtenidos.
 
@@ -10,7 +10,7 @@ Este trabajo se ha desarrollado como parte del **Proyecto Integrador de la asign
 
 ---
 
-## 🎯 Objetivos
+# Objetivos
 
 * Comprender la gestión de procesos e hilos en Linux.
 * Analizar el uso real de memoria del sistema.
@@ -20,7 +20,7 @@ Este trabajo se ha desarrollado como parte del **Proyecto Integrador de la asign
 
 ---
 
-## 🗂️ Estructura del proyecto
+# Estructura del proyecto
 
 ```text
 proyecto_monitorizacion_auditoria/
@@ -37,11 +37,11 @@ proyecto_monitorizacion_auditoria/
 
 ---
 
-## ⚙️ Funcionalidad de los módulos
+# Funcionalidad de los módulos
 
-### 🔹 Módulo de procesos (`procesos.py`)
+# Módulo de procesos (procesos.py)
 
-* Lista los procesos en ejecución a partir de `/proc`.
+* Lista los procesos en ejecución a partir de /proc.
 * Muestra información básica como:
 
   * PID
@@ -50,9 +50,9 @@ proyecto_monitorizacion_auditoria/
 
 ---
 
-### 🔹 Módulo de memoria (`memoria.py`)
+# Módulo de memoria (memoria.py)
 
-* Analiza el archivo `/proc/meminfo`.
+* Analiza el archivo /proc/meminfo.
 * Calcula y muestra:
 
   * Memoria total
@@ -64,7 +64,7 @@ proyecto_monitorizacion_auditoria/
 
 ---
 
-### 🔹 Módulo de auditoría (`auditoria.py`)
+# Módulo de auditoría (auditoria.py)
 
 * Recorre rutas críticas del sistema:
 
@@ -80,7 +80,7 @@ proyecto_monitorizacion_auditoria/
 
 ---
 
-### 🔹 Módulo de reporte (`reporte.py`)
+# Módulo de reporte (reporte.py)
 
 * Genera automáticamente un informe en formato **Markdown**.
 * Incluye:
@@ -92,29 +92,29 @@ proyecto_monitorizacion_auditoria/
 
 ---
 
-## ▶️ Ejecución del programa
+# Ejecución del programa
 
-### Requisitos
+- Requisitos
 
 * Sistema operativo **Linux (Ubuntu)**
 * Python **3.10 o superior**
 * No requiere librerías externas (no se usa `psutil`)
 
-### Ejecución
+# Ejecución
 
 Desde el directorio raíz del proyecto:
 
-```bash
+bash
 python3 main.py
-```
 
-El informe se generará automáticamente en la carpeta `informes/`.
+
+El informe se generará automáticamente en la carpeta informes/.
 
 ---
 
-## 📄 Informe generado
+# Informe generado
 
-El programa crea un archivo `informe.md` que contiene:
+El programa crea un archivo informe.md que contiene:
 
 * Estado general del sistema
 * Listado de procesos
@@ -126,9 +126,9 @@ Este informe puede convertirse fácilmente a PDF o HTML si se desea.
 
 ---
 
-## ✅ Conclusiones
+# Conclusiones
 
-Este proyecto permite comprender de forma práctica el funcionamiento interno de un sistema Linux, especialmente en lo relativo a la gestión de procesos, memoria y seguridad del sistema de archivos. El uso de `/proc` garantiza independencia de librerías externas y un contacto directo con el sistema operativo.
+Este proyecto permite comprender de forma práctica el funcionamiento interno de un sistema Linux, especialmente en lo relativo a la gestión de procesos, memoria y seguridad del sistema de archivos. El uso de /proc garantiza independencia de librerías externas y un contacto directo con el sistema operativo.
 
 ---
 
