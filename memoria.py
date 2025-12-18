@@ -1,13 +1,22 @@
-# Función que analiza la info. de memoria del sistema
+# Función que analiza la información de la memoria del sistema leyendo el archivo
+# /proc/meminfo y convirtiendo los valores más relevantes de kB a MB
 def parse_meminfo():
-    mem = {}
-    with open('/proc/meminfo','r') as f:
+    mem = {}  # Diccionario donde se almacenarán los valores de memoria leídos del sistema
+
+    # Abrimos el archivo /proc/meminfo en modo lectura para obtener información de la memoria
+    with open('/proc/meminfo', 'r') as f:
         for line in f:
-            key, val = line.split(':',1)
-            val = val.strip().split()[0]  # Valor en kB
-            mem[key] = int(val)
-    # Convierte a MB
-    to_mb = lambda k: mem.get(k,0) / 1024.0
+            # Separamos cada línea en clave y valor usando el carácter ':'
+            key, val = line.split(':', 1)
+
+            # Limpiamos el valor, nos quedamos con el número y lo interpretamos como kB
+            val = val.strip().split()[0]
+            mem[key] = int(val)  # Guardamos el valor numérico en el diccionario
+
+    # Función lambda que convierte el valor de una clave concreta de kB a MB
+    to_mb = lambda k: mem.get(k, 0) / 1024.0
+
+    # Devolvemos un diccionario con los principales datos de memoria expresados en MB
     return {
         'MemTotal_MB': to_mb('MemTotal'),
         'MemFree_MB': to_mb('MemFree'),
@@ -16,3 +25,4 @@ def parse_meminfo():
         'SwapTotal_MB': to_mb('SwapTotal'),
         'SwapFree_MB': to_mb('SwapFree')
     }
+
