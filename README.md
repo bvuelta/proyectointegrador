@@ -68,9 +68,9 @@ proyecto_monitorizacion_auditoria/
 
 * Recorre rutas críticas del sistema:
 
-  * `/etc`
-  * `/var/log`
-  * `/usr/local/bin`
+  * /etc
+  * /var/log
+  * /usr/local/bin
   * Directorio personal del usuario
 * Detecta:
 
