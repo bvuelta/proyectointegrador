@@ -98,7 +98,7 @@ proyecto_monitorizacion_auditoria/
 
 * Sistema operativo **Linux (Ubuntu)**
 * Python **3.10 o superior**
-* No requiere librerías externas (no se usa `psutil`)
+* No requiere librerías externas (no se usa psutil)
 
 # Ejecución
 
