@@ -13,7 +13,7 @@ def recorrer_ruta(root_path, max_depth=5):  # Recibe una ruta raíz y un paráme
     # Devuelve en cada iteración: ruta actual, lista de subdirectorios y lista de archivos
     for dirpath, dirnames, filenames in os.walk(root_path):
 
-        # Iteramos tanto sobre archivos como sobre directorios
+  
         for name in filenames + dirnames:
             try:
                 # Construimos la ruta completa uniendo el directorio actual con el nombre
@@ -46,7 +46,7 @@ def permisos_riesgo(paths):
             # Si no se puede acceder a los metadatos, se ignora la ruta
             continue
 
-        mode = st.st_mode  # Guardamos el modo del archivo (contiene los bits de permisos)
+        mode = st.st_mode  # Guardamos el modo del archivo 
 
         # Comprobación de permisos world writable (escritura para otros)
         if bool(mode & stat.S_IWOTH):
@@ -56,11 +56,11 @@ def permisos_riesgo(paths):
         if stat.S_IMODE(mode) == 0o777:
             permiso_777.append(str(p))
 
-        # Comprobación del bit SUID (ejecución con privilegios del propietario)
+        # Comprobación del bit SUID 
         if bool(mode & stat.S_ISUID):
             suid.append(str(p))
 
-        # Comprobación del bit SGID (ejecución con privilegios del grupo)
+        # Comprobación del bit SGID 
         if bool(mode & stat.S_ISGID):
             sgid.append(str(p))
 
