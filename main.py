@@ -12,15 +12,13 @@ def main():
     # Obtenemos y procesamos la información de la memoria del sistema
     mem = memoria.parse_meminfo()
 
-    # Definimos las rutas que se van a auditar, incluyendo directorios críticos
-    # del sistema y el directorio personal del usuario
-    rutas = ['/etc', '/var/log', '/usr/local/bin', '~']  # Mínimo 2 pedidas
+    # Definimos las rutas que se van a auditar
+    rutas = ['/etc', '/var/log', '/usr/local/bin', '~']  
 
     # Lista donde se almacenarán todas las rutas encontradas durante la auditoría
     all_paths = []
 
-    # Recorremos cada una de las rutas definidas y añadimos todos los archivos
-    # y directorios encontrados a la lista general
+    # Recorremos cada una de las rutas definidas 
     for r in rutas:
         all_paths.extend(list(auditoria.recorrer_ruta(r)))
 
@@ -28,8 +26,7 @@ def main():
     # configuraciones peligrosas como permisos 777, SUID, SGID o escritura global
     audit_res = auditoria.permisos_riesgo(all_paths)
 
-    # Generamos un informe en formato Markdown con los resultados del análisis
-    # de procesos, memoria y auditoría de permisos
+    # Generamos un informe 
     reporte.generar_markdown(procs, mem, audit_res, output_path='informe.md')
 
 
