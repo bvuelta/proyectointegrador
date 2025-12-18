@@ -1,5 +1,4 @@
 # Proyecto Integrador - Monitorización y Auditoría del Sistema Operativo
-
 Asier Landaburu, Beñat Vuelta, Gaizka Hidalgo.
 
 Este proyecto consiste en una herramienta desarrollada en Python cuyo objetivo es monitorizar y analizar distintos aspectos de un sistema operativo Linux en tiempo real. El programa obtiene información directamente del sistema para estudiar el uso de procesos, memoria y permisos de archivos, y genera automáticamente un informe técnico con los resultados obtenidos.
